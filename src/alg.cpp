@@ -39,6 +39,7 @@ BST<std::string> makeTree(const char* filename) {
       } break;
       case NotLetter : {
         stringTree.add(TextToAdd);
+        TextToAdd = "";
       } break;
     }
   }
