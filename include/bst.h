@@ -4,7 +4,7 @@
 
 template <typename T>
 class BST {
- private : 
+ private :
   struct Node {
     T value;
     int count;
@@ -12,22 +12,22 @@ class BST {
     Node * right;
   };
   Node * root;
-  
-  Node * addNode(Node * root, T& val) {
+
+  Node * addNode(Node * root, const T& val) {
     if (root == nullptr) {
       root = new Node;
       root -> value = val;
       root -> count = 1;
       root -> left = root -> right = nullptr;
-    } else if (val < root -> value)
+    } else if (val < root -> value) {
       root -> left = addNode(root -> left, val);
-    else if (val > root -> value)
+    } else if (val > root -> value) {
       root -> right = addNode(root -> right, val);
-    else root -> count++;
+    } else root -> count++;
     return root;
   }
-  
-  int searchNode(Node * root, T& val) {
+
+  int searchNode(Node * root, const T& val) {
     if (root == nullptr)
       return 0;
     else if (root -> value == val)
@@ -37,17 +37,19 @@ class BST {
     else
       return serachNode(root -> right, val);
   }
-  
+
   int heightTree(Node * root) {
     if (root == nullptr)
       return 0;
-    else
-    int L = heightTree(root -> left);
-    int R = heightTree(root -> right);
-    if (L > R) return L + 1;
-    else return R + 1;
+    else {
+      int L = heightTree(root -> left);
+      int R = heightTree(root -> right);
+      if (L > R)
+       return L + 1;
+      else return R + 1;
+    }
   }
-  
+
  public:
   BST() : root(nullptr) {}
   void add(const T& val) {
