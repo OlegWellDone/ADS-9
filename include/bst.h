@@ -60,7 +60,7 @@ class BST {
     root = addNode(root, val);
   }
   int depth() {
-    return heightTree(root);
+    return heightTree(root) - 1;
   }
   int search(const T& val) {
     return searchNode(root, val);
