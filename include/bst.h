@@ -37,7 +37,7 @@ class BST {
     else if (root -> value > val)
       return searchNode(root -> left, val);
     else
-      return serachNode(root -> right, val);
+      return searchNode(root -> right, val);
   }
 
   int heightTree(Node * root) {
@@ -59,7 +59,7 @@ class BST {
   void add(const T& val) {
     root = addNode(root, val);
   }
-  int height() {
+  int depth() {
     return heightTree(root);
   }
   int search(const T& val) {
