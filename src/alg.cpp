@@ -5,11 +5,11 @@
 #include  <cstdlib>
 #include  "bst.h"
 
-final int HigherCase = 1;
-final int LowerCase = 0;
-final int NotLetter = 2;
+public final int HigherCase = 1;
+public final int LowerCase = 0;
+public final int NotLetter = 2;
 
-void lowerOrHigherCase(char symb) {
+int lowerOrHigherCase(char symb) {
   int SymbAscII = symb;
   if (symb > 64 && symb < 91)
     return HigherCase;
@@ -31,13 +31,13 @@ BST<std::string> makeTree(const char* filename) {
     char SymbToAdd = file.get();
     
     switch (lowerOrHigherCase(SymbToAdd)) {
-      case : HigherCase : {
-        TextToAdd += toLower(SymbToAdd);
+      case HigherCase : {
+        TextToAdd += tolower(SymbToAdd);
       } break;
-      case : LowerCase : {
+      case LowerCase : {
         TextToAdd += SymbToAdd;
       } break;
-      case : NotLetter : {
+      case NotLetter : {
         stringTree.add(TextToAdd);
       } break;
     }
