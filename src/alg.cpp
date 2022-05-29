@@ -5,9 +5,9 @@
 #include  <cstdlib>
 #include  "bst.h"
 
-public final int HigherCase = 1;
-public final int LowerCase = 0;
-public final int NotLetter = 2;
+const int HigherCase = 1;
+const int LowerCase = 0;
+const int NotLetter = 2;
 
 int lowerOrHigherCase(char symb) {
   int SymbAscII = symb;
@@ -23,13 +23,13 @@ BST<std::string> makeTree(const char* filename) {
   std::ifstream file(filename);
   if (!file) {
         std::cout << "File error!" << std::endl;
-        return;
+        return 0;
     }
-  
+
   std::string TextToAdd = "";
-  while(!file.eof()) {
+  while (!file.eof()) {
     char SymbToAdd = file.get();
-    
+
     switch (lowerOrHigherCase(SymbToAdd)) {
       case HigherCase : {
         TextToAdd += tolower(SymbToAdd);
