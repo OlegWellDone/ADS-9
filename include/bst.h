@@ -23,7 +23,9 @@ class BST {
       root -> left = addNode(root -> left, val);
     } else if (val > root -> value) {
       root -> right = addNode(root -> right, val);
-    } else root -> count++;
+    } else {
+     root -> count++;
+    }
     return root;
   }
 
@@ -39,14 +41,16 @@ class BST {
   }
 
   int heightTree(Node * root) {
-    if (root == nullptr)
+    if (root == nullptr) {
       return 0;
-    else {
+    } else {
       int L = heightTree(root -> left);
       int R = heightTree(root -> right);
-      if (L > R)
+      if (L > R) {
        return L + 1;
-      else return R + 1;
+      } else {
+       return R + 1;
+      }
     }
   }
 
